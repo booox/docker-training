@@ -4,12 +4,13 @@
 #
 # Dockerizing php-fpm: Dockerfile for building php-fpm images
 #
-FROM       csphere/centos:7.1
-MAINTAINER Carson,C.J.Zeong <zcy@nicescale.com>
+FROM       ihub/centos:7.1
+MAINTAINER lunn
 
 # Set environment variable
 ENV	APP_DIR /app
 
+#RUN yum clean all && yum swap -y fakesystemd
 RUN	yum -y install nginx php-cli php-mysql php-pear php-ldap php-mbstring php-soap php-dom php-gd php-xmlrpc php-fpm php-mcrypt && \ 
 	yum clean all
 

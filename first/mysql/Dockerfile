@@ -4,8 +4,8 @@
 #
 # Dockerizing Mariadb: Dockerfile for building Mariadb images
 #
-FROM csphere/centos:7.1
-MAINTAINER Carson,C.J.Zeong <zcy@nicescale.com>
+FROM ihub/centos:7.1
+MAINTAINER lunn 
 
 ENV DATA_DIR /var/lib/mysql
 
@@ -17,6 +17,7 @@ ADD mysqld_charset.cnf /etc/my.cnf.d/
 
 COPY scripts /scripts
 RUN chmod +x /scripts/start
+RUN chmod +x /scripts/firstrun_maria
 
 EXPOSE 3306
 

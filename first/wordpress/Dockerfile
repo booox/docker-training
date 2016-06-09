@@ -1,5 +1,6 @@
-from csphere/php-fpm:5.4
+FROM ihub/php-fpm:5.4
 
-add init.sh /init.sh
+ADD init.sh /init.sh
+RUN chmod +x /init.sh
 
-entrypoint ["/init.sh", "/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
+ENTRYPOINT ["/init.sh", "/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
